@@ -139,9 +139,9 @@ class ConfigureCommand extends Command
             'parameters' => [
                 'git_dir' => $gitDir,
                 'bin_dir' => $binDir,
-                'tasks' => array_map(function ($task) {
-                    return null;
-                }, array_flip($tasks)),
+//                'tasks' => array_map(function ($task) {
+//                    return null;
+//                }, array_flip($tasks)),
             ]
         ];
     }
