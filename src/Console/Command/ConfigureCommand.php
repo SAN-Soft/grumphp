@@ -80,6 +80,7 @@ class ConfigureCommand extends Command
         }
         // Check configuration:
         $configuration = $this->buildConfiguration($input, $output);
+        $configuration = false;
         if (!$configuration) {
             $output->writeln('<fg=yellow>Skipped configuring GrumPHP. Using default configuration.</fg=yellow>');
             return;
