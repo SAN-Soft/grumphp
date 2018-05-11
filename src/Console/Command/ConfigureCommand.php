@@ -160,6 +160,7 @@ class ConfigureCommand extends Command
             'parameters' => [
                 'git_dir' => $gitDir,
                 'bin_dir' => $binDir,
+                'process_async_wait' => 600,
                 'tasks' => array_map(function ($task) {
                     return null;
                 }, array_flip($tasks)),
