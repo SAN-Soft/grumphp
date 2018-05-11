@@ -45,7 +45,7 @@ class ConfigureCommand extends Command
     protected $input;
 
     /**
-     * @param GrumPHP    $config
+     * @param GrumPHP $config
      * @param Filesystem $filesystem
      * @param Repository $repository
      */
@@ -73,7 +73,7 @@ class ConfigureCommand extends Command
     }
 
     /**
-     * @param InputInterface  $input
+     * @param InputInterface $input
      * @param OutputInterface $output
      *
      * @return int|void
@@ -113,7 +113,7 @@ class ConfigureCommand extends Command
     /**
      * This method will ask the developer for it's input and will result in a configuration array.
      *
-     * @param InputInterface  $input
+     * @param InputInterface $input
      * @param OutputInterface $output
      *
      * @return array
@@ -158,7 +158,7 @@ class ConfigureCommand extends Command
         $defaultTasks = [
             'phpcsfixer2' => [
                 'allow_risky' => false,
-                'config' =>  '.php_cs',
+                'config' => '.php_cs',
                 'using_cache' => true,
                 'verbose' => true,
                 'diff' => false,
@@ -171,16 +171,14 @@ class ConfigureCommand extends Command
             'parameters' => [
                 'git_dir' => $gitDir,
                 'bin_dir' => $binDir,
-                'tasks' => array_map(function ($task) {
-                    return null;
-                }, array_flip($defaultTasks)),
+                'tasks' => $defaultTasks,
             ]
         ];
     }
 
     /**
      * @param        $question
-     * @param null   $default
+     * @param null $default
      * @param string $separator
      *
      * @return string
