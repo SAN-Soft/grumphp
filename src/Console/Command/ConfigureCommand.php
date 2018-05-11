@@ -155,15 +155,25 @@ class ConfigureCommand extends Command
         $question->setMultiselect(true);
         $tasks = $helper->ask($input, $output, $question);
 
+        $defaultTasks = [
+            'phpcsfixer2' => [
+                'allow_risky' => false,
+                'config' =>  '.php_cs',
+                'using_cache' => true,
+                'verbose' => true,
+                'diff' => false,
+                'triggered_by' => ['php']
+            ]
+        ];
+
         // Build configuration
         return [
             'parameters' => [
                 'git_dir' => $gitDir,
                 'bin_dir' => $binDir,
-                'process_async_wait' => 600,
                 'tasks' => array_map(function ($task) {
                     return null;
-                }, array_flip($tasks)),
+                }, array_flip($defaultTasks)),
             ]
         ];
     }
