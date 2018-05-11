@@ -5,8 +5,8 @@ parameters:
   hooks_preset: local
   tasks:
       phpcsfixer2:
-          allow_risky: false,
-          config: '.php_cs',
+          allow_risky: false
+          config: '.php_cs'
           using_cache: true
   testsuites: []
   stop_on_failure: false
